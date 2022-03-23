@@ -1,0 +1,33 @@
+1. Widoki
+-widok kucharz
+CREATE VIEW kucharz
+AS SELECT `zamowienia`.`id_zamowienia`, `wartosc`.`hawajska`, `wartosc`.`h_wielkosc`, `wartosc`.`bogacz`, `wartosc`.`b_wielkosc`, `wartosc`.`miesna`, `wartosc`.`m_wielkosc`, `wartosc`.`data` FROM `zamowienia` INNER JOIN `wartosc` ON `zamowienia`.`id_wartosc` = `wartosc`.`id_wartosc` ORDER BY `id_zamowienia` DESC LIMIT 5;
+
+-widok kierowca
+
+-widok sumy p³atnoœci kart¹
+CREATE VIEW platnosc_karta
+AS SELECT COUNT(metoda_platnosci)AS 'placone karta' FROM zamowienia WHERE metoda_platnosci="karta";
+
+-widok sumy p³atnoœci gotowka
+CREATE VIEW platnosc_gotowka
+AS SELECT COUNT(metoda_platnosci)AS 'placone gotowka' FROM zamowienia WHERE metoda_platnosci="gotowka";
+
+
+2. TABELE
+
+-tabela zamowienia
+CREATE TABLE `pizzacms2`.`zamowienia` ( `id_zamowienia` INT NOT NULL AUTO_INCREMENT , `id_pracownicy` INT NOT NULL , `id_kierowcy` INT NOT NULL , `metoda_platnosci` VARCHAR(15) NOT NULL , `data` DATE NOT NULL , PRIMARY KEY (`id_zamowienia`)) ENGINE = InnoDB;
+
+-tabela klienci
+CREATE TABLE `pizzacms2`.`klienci` ( `id_zamowienia` INT NOT NULL AUTO_INCREMENT , `imie` VARCHAR(20) NOT NULL , `nazwisko` VARCHAR(20) NOT NULL , `miejscowosc` VARCHAR(25) NOT NULL , `nr_domu` INT NOT NULL , PRIMARY KEY (`id_zamowienia`)) ENGINE = InnoDB;
+
+-relacje klienci-zamowienia
+ALTER TABLE `zamowienia` ADD FOREIGN KEY (`id_zamowienia`) REFERENCES `klienci`(`id_zamowienia`) ON DELETE RESTRICT ON UPDATE RESTRICT
+
+-tabela wartosc
+CREATE TABLE `pizzacms2`.`wartosc` ( `id_zamowienia` INT NOT NULL AUTO_INCREMENT , `hawajska` INT NOT NULL , `h_wielkosc` VARCHAR(10) NOT NULL , `bogacz` INT NOT NULL , `b_wielkosc` VARCHAR(10) NOT NULL , `miesna` INT NOT NULL , `m_wielkosc` VARCHAR(10) NOT NULL , `ilosc` INT NOT NULL , `cena` INT NOT NULL , `data` DATETIME NOT NULL , PRIMARY KEY (`id_zamowienia`)) ENGINE = InnoDB;
+
+-relacje wartrosc-zamowienia
+ALTER TABLE `zamowienia` ADD FOREIGN KEY (`id_zamowienia`) REFERENCES `wartosc`(`id_zamowienia`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
