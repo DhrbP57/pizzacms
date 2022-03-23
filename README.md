@@ -1,6 +1,6 @@
 # pizzacms
 
-The simple exmaple pizza website.
+The simple exmaple pizzeria website.
 
 Technology:
 -html
