@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #663300;
+}
+
+.section-header {
+  background: #663300;
+}
+
+.section-header .container .big-foto img {
+  padding: 10px 0;
+  width: 100px;
+  height: 50px;
+  border-radius: 100%;
+}
+
+.section-header .container .menu ul .underline a {
+  text-decoration: underline;
+}
+
+.section-header .container .menu ul li {
+  display: inline-block;
+}
+
+.section-header .container .menu ul li a {
+  color: #fff;
+  font-weight: 700;
+}
+
+.section-products .container .row {
+  border: 1px gray solid;
+  margin-bottom: 10px;
+}
+
+.section-products .container .row .pizza-foto img {
+  margin-top: 10px;
+  border-radius: 100%;
+  width: 130px;
+  height: 130px;
+}
+
+.section-products .container .row .pizza-foto h4 {
+  display: inline-block;
+}
+
+.section-products .container .row .pizza-foto input {
+  display: block;
+  width: 70px;
+}
+
+.section-products .container .row .pizza-foto select {
+  margin: 10px 0;
+  width: 150px;
+}
+
+.section-products .container .row .pizza-foto .price3 {
+  display: inline-block;
+}
+
+.section-form h3 {
+  margin-top: 40px;
+}
+
+.section-form button {
+  margin-top: 20px;
+}
+
+.section-form .step1 {
+  display: none;
+}
+
+.section-form .step1.step1-see {
+  display: block !important;
+}
+
+.section-form .step2 {
+  display: none;
+}
+
+.section-form .step2.step2-see {
+  display: block !important;
+}
+
+.section-form .step3 {
+  display: none;
+}
+
+.section-form .step3.step3-see {
+  display: block !important;
+}
+
+.section-footer {
+  background: #1d70dd;
+  padding: 3px 0;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.section-footer .name {
+  text-align: right;
+}
+/*# sourceMappingURL=style.css.map */
